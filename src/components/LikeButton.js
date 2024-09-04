@@ -4,20 +4,29 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 function LikeButton({ video }) {
   const [liked, setLiked] = useState(false);
+  const [count,setCount] = useState(0);
 
   const handleClick = () => {
-    setLiked(!liked);
-    // Implement any additional logic here, e.g., updating a database
+    if (!liked){ // If not already liked
+      setCount(count+1)
+    }
+    else{
+      setCount(count-1)
+    }
+    setLiked(!liked); // Implement any additional logic here, e.g., updating a database
   };
 
   return (
-    <button className="like-button" onClick={handleClick}>
+    <div style={{ textAlign: 'center' }}>
+    <button className="like-button" onClick={handleClick} style={{ marginRight: '15px' }}>
       <FontAwesomeIcon 
         icon={faHeart} 
         color={liked ? 'red' : 'gray'} 
         style={{ fontSize: '0.6em' }}
       />
     </button>
+    <p>{count}</p>
+    </div>
   );
 }
 
