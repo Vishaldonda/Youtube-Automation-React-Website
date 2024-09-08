@@ -1,7 +1,42 @@
-/* .App {
-  /* text-align: center; */
-  /* max-width: 600px;
-} */ 
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+
+.header-container {
+  width: 100%; /* Full width of the parent container */
+  display: flex; /* Enables Flexbox layout */
+  justify-content: space-between;
+  align-items: center; /* Vertically align items to the center */
+  padding: 0 20px; /* Padding to ensure content doesn't touch the edges */
+}
+
+.heading { 
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+}
+
+
+.top-right-icon {
+  top: 100px;
+  right: 20px;
+}
+
+.my-photo {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Same as width for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the circle */
+  border: 3px black; 
+}
+
+ /* text-align: center;  */
+ /* max-width: 600px; */
+
 
 h1 {
   text-align: center; /* Center align the heading */
@@ -11,6 +46,11 @@ h1 {
   margin: 20px 0; /* Add space above and below the heading */
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em; /* Smaller font size for mobile screens */
+  }
+}
 
 .video-container {
   display: flex; /* Enables flexbox layout for positioning child elements */

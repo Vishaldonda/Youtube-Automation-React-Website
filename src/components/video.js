@@ -9,9 +9,13 @@ function Thumbnail({ video }) {
     );
   }
   
-function Video({ video }) {
+function Video({ video, isMobile }) {
     return (
-      <div className="video-container">
+      <div className="video-container" style={{
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: isMobile ? 'flex-start' : 'center',
+        textAlign: isMobile ? 'left' : 'center',
+      }}>
         <Thumbnail video={video} />
         <div className="video-details">
           <a href={video.url} target="_blank" rel="noopener noreferrer">
